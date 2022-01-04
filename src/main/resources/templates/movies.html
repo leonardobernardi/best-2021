@@ -25,8 +25,8 @@
         </div>
       </nav>
       <h1>Best Movies of 2021</h1>
-      <div th:each="movie : ${movieList}"></div>
-        <div class="card border-dark" th:each="movieEntry : ${movie}">
+    
+        <div class="card border-dark" th:each="movieEntry : ${movieList}">
             <img th:src="${movieEntry.get("immagine")}" class="card-img-top" alt="img">
             <div class="card-body">
                 <h5 class="card-title" th:text="${movieEntry.get("titolo")}"></h5>

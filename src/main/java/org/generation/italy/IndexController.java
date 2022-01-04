@@ -63,8 +63,8 @@ public class IndexController {
 		model.addAllAttributes(tear);
 		model.addAllAttributes(ifYou);
 		model.addAllAttributes(songList);
-		
 		model.addAttribute("songs", Arrays.asList("Waiting on a War - Foo Fighters", "Teardrinker - Mastodon", "If you say the word - Radiohead"));
+	
 		return "songs";
 	}
 	
