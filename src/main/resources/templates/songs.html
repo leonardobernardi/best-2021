@@ -16,7 +16,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
+            <div class="navbar-nav fs-4">
               <a class="nav-link" aria-current="page" th:href="@{/}" th:text="'Home'"></a>
               <a class="nav-link" th:href="@{movies}" th:text="'Movies'"></a>
               <a class="nav-link active" th:href="@{songs}" th:text="'Songs'"></a>
@@ -25,14 +25,14 @@
         </div>
       </nav>
       <h1>Best Songs of 2021</h1>
-      <div th:if="${songs.size() > 0}">
-          <ul>
-              <li th:each="song : ${songs}" th:text="${song}">
-              </li>
-          </ul>
-      </div>
-      <p th:unless="${songs.size() > 0}">Sorry, no songs in database</p>
-      <a th:href="@{/}" th:text="'Home'"></a>
+      <div th:each="songEntry : ${songList}"></div>
+        <div class="card border-dark" th:each="movieEntry : ${movie}">
+            <img th:src="${songEntry.get("immagine")}" class="card-img-top" alt="img">
+            <div class="card-body">
+                <h5 class="card-title" th:text="${songEntry.get("titolo")}"></h5>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel enim consectetur, semper justo non, faucibus ipsum. Mauris nec enim diam. Nullam id dictum dui. Nulla ut ornare tortor. Mauris sit amet diam euismod, euismod nulla ut, facilisis tortor. Curabitur magna mauris, accumsan ut metus ac, gravida interdum velit. Sed dui augue, fringilla non venenatis id, iaculis vitae felis. Aliquam congue id metus vel elementum. Aliquam lacinia ipsum sed porta lacinia.</p>
+            </div>
+        </div>
 
 <!-- Bootstrap Bundle with Popper -->
 <script th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.bundle.min.js}"></script>
